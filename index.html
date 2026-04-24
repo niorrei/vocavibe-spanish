@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VocaVibe Spanish Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="brand">🇪🇸 Voca<span>Vibe</span></div>
+            <div class="stat-card">
+                <span class="label">Total Poin</span>
+                <span id="total-points" class="value">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="label">Limit Hari Ini</span>
+                <span id="daily-limit" class="value">0/10</span>
+                <div class="progress-bg"><div id="progress-fill" class="progress-fill"></div></div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header neumorph">
+                <div class="user-info">
+                    <div class="avatar"><i class="fas fa-user-circle"></i></div>
+                    <div>
+                        <h2 id="display-username">Guest</h2>
+                        <p id="streak-info"><i class="fas fa-fire"></i> 0 Hari Streak</p>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button id="login-btn" class="btn-control" title="Login"><i class="fas fa-sign-in-alt"></i></button>
+                    <button id="dark-mode-toggle" class="btn-control" title="Tema"><i class="fas fa-moon"></i></button>
+                    <button id="export-btn" class="btn-control" title="Export CSV"><i class="fas fa-file-export"></i></button>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <div class="left-column">
+                    <section class="input-section neumorph">
+                        <div class="input-group">
+                            <input type="text" id="word-input" placeholder="Spanyol (e.g. Gracias)">
+                            <input type="text" id="meaning-input" placeholder="Arti (e.g. Terima Kasih)">
+                            <button id="add-btn" class="btn-primary">Tambah Kata</button>
+                        </div>
+                    </section>
+
+                    <section class="flashcard-section">
+                        <div class="card-perspective">
+                            <div id="flashcard" class="card">
+                                <div class="card-face card-front"><span class="tag">ES</span><p id="display-sp">Hola</p></div>
+                                <div class="card-face card-back"><span class="tag">ID</span><p id="display-id">Halo</p></div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <aside class="right-column leaderboard neumorph">
+                    <h3><i class="fas fa-trophy"></i> Peringkat Publik</h3>
+                    <ul id="leaderboard-list">
+                        <p style="opacity:0.5; font-size:0.8rem">Memuat peringkat...</p>
+                    </ul>
+                </aside>
+            </div>
+
+            <section class="vocab-list-section">
+                <div class="section-header">
+                    <h3><i class="fas fa-book"></i> Koleksi Kata</h3>
+                    <div class="search-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-input" placeholder="Cari kata...">
+                    </div>
+                </div>
+                <div id="vocab-list" class="vocab-list"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
